@@ -131,7 +131,6 @@ public class Bot extends TelegramLongPollingBot {
         }
 
         keyboardRow2.add(new KeyboardButton("Перезапуск"));
-
         replyKeyboardMarkup.setKeyboard(keyboardRows);
     }
 }
