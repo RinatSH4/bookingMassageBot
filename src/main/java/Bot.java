@@ -117,15 +117,17 @@ public class Bot extends TelegramLongPollingBot {
         keyboardRows.add(keyboardRow1);
         keyboardRows.add(keyboardRow2);
 
-        if (buttonArr.length <= 4)
-            for (int i = 0; i < buttonArr.length; i++)
-                keyboardRow.add(new KeyboardButton(buttonArr[i]));
-        else {
-            for (int i = 0; i < 4; i++)
-                keyboardRow.add(new KeyboardButton(buttonArr[i]));
+        if (buttonArr.length != 0) {
+            if (buttonArr.length <= 4)
+                for (int i = 0; i < buttonArr.length; i++)
+                    keyboardRow.add(new KeyboardButton(buttonArr[i]));
+            else {
+                for (int i = 0; i < 4; i++)
+                    keyboardRow.add(new KeyboardButton(buttonArr[i]));
 
-            for (int j = 4; j < buttonArr.length; j++)
-                keyboardRow1.add(new KeyboardButton(buttonArr[j]));
+                for (int j = 4; j < buttonArr.length; j++)
+                    keyboardRow1.add(new KeyboardButton(buttonArr[j]));
+            }
         }
 
         keyboardRow2.add(new KeyboardButton("Перезапуск"));
